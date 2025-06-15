@@ -1,69 +1,77 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { FaHome, FaBuilding, FaBook, FaInfoCircle, FaPhone } from "react-icons/fa";
 
-const Navbar = () => {
-  // State to manage the navbar's visibility
+export default function Navbar() {
   const [nav, setNav] = useState(false);
+  const handleNav = () => setNav(!nav);
 
-  // Toggle function to handle the navbar's display
-  const handleNav = () => {
-    setNav(!nav);
-  };
-
-  // Array containing navigation items
   const navItems = [
-    { id: 1, text: "Home" },
-    { id: 2, text: "Company" },
-    { id: 3, text: "Resources" },
-    { id: 4, text: "About" },
-    { id: 5, text: "Contact" },
+    { id: 1, text: "Home", path: "/", icon: <FaHome /> },
+    { id: 2, text: "Company", path: "/company", icon: <FaBuilding /> },
+    { id: 3, text: "Resources", path: "/resources", icon: <FaBook /> },
+    { id: 4, text: "About", path: "/about", icon: <FaInfoCircle /> },
+    { id: 5, text: "Contact", path: "/contact", icon: <FaPhone /> },
   ];
 
+  const activeClass =
+    "bg-[#00df9a] text-black rounded-xl px-4 py-2 font-semibold transition-all duration-300";
+  const defaultClass =
+    "px-4 py-2 hover:bg-[#00df9a] hover:text-black rounded-xl transition-all duration-300";
+
   return (
-    <div className="bg-black flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
-      {/* Logo */}
-      <h1 className="w-full text-3xl font-bold text-[#00df9a]">REACT.</h1>
+    <nav className="bg-black text-white h-24 shadow-lg">
+      <div className="flex justify-between items-center max-w-[1240px] mx-auto px-4 h-full">
+        <h1 className="text-3xl font-bold text-[#00df9a]">DevWithK8s</h1>
 
-      {/* Desktop Navigation */}
-      <ul className="hidden md:flex">
-        {navItems.map((item) => (
-          <li
-            key={item.id}
-            className="p-4 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black"
-          >
-            {item.text}
-          </li>
-        ))}
-      </ul>
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex space-x-4">
+          {navItems.map(({ id, text, path }) => (
+            <li key={id}>
+              <NavLink
+                to={path}
+                className={({ isActive }) =>
+                  isActive ? activeClass : defaultClass
+                }
+              >
+                {text}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
 
-      {/* Mobile Navigation Icon */}
-      <div onClick={handleNav} className="block md:hidden">
-        {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+        {/* Hamburger Icon */}
+        <div className="md:hidden" onClick={handleNav}>
+          {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
+        </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
-      <ul
-        className={
-          nav
-            ? "fixed md:hidden left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500"
-            : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
-        }
+      {/* Mobile Nav */}
+      <div
+        className={`md:hidden fixed top-0 left-0 h-full w-[60%] bg-[#000300] border-r border-gray-800 z-40 transform ${nav ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300`}
       >
-        {/* Mobile Logo */}
-        <h1 className="w-full text-3xl font-bold text-[#00df9a] m-4">REACT.</h1>
-
-        {/* Mobile Navigation Items */}
-        {navItems.map((item) => (
-          <li
-            key={item.id}
-            className="p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600"
-          >
-            {item.text}
-          </li>
-        ))}
-      </ul>
-    </div>
+        <h1 className="text-3xl font-bold text-[#00df9a] m-4">REACT.</h1>
+        <ul className="flex flex-col gap-2 p-4">
+          {navItems.map(({ id, text, path, icon }) => (
+            <li key={id} onClick={() => setNav(false)}>
+              <NavLink
+                to={path}
+                className={({ isActive }) =>
+                  isActive
+                    ? `${activeClass} flex items-center gap-2`
+                    : `${defaultClass} flex items-center gap-2`
+                }
+              >
+                {icon}
+                {text}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
   );
 };
 
-export default Navbar;
