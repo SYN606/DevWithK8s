@@ -1,5 +1,47 @@
 import Homepage from "./Homepage";
+import CheatSheet from "./CheatSheet";
+
+// basics
+import KubernetesIntro from "./basics/Intro";
+import KubernetesArchitecture from "./basics/Architecture";
+import MonolithicVsMicroservices from "./basics/Monolithic-vs-Microservices";
+import KindClusterInstallation from "./basics/Kind-cluster-installation";
+
+// clusters
+import NamespacesPage from "./clusters/Namespaces";
+import MinikubeCluster from "./clusters/MinikubeCluster";
+import KindClusterConfig from "./clusters/KindClusterConfig";
+
+// workloads
+import PodsPage from "./workloads/Pods";
+import Deployment from "./workloads/Deployment";
+import ReplicaSetVsStatefulSetPage from "./workloads/ReplicaSetVsStatefulSetPage";
+import RollingUpdatesPage from "./workloads/RollingUpdatesPage";
+import DaemonSets from "./workloads/DaemonSets";
+import JobsAndCronJobs from "./workloads/JobsAndCronJobs";
+
+// storage
+import PersistentVolume from "./storage/PersistentVolume";
+import PersistentVolumeClaim from "./storage/PersistentVolumeClaim";
+import StorageClass from "./storage/StorageClass";
+import StorageOverview from "./storage/StorageOverview";
+
+// error page
+import NotFoundPage from "./ErrorPage";
 
 export {
-    Homepage
+    Homepage,
+    CheatSheet,
+
+    // basics
+    KubernetesIntro, KubernetesArchitecture, MonolithicVsMicroservices, KindClusterInstallation,
+    // Clusters
+    NamespacesPage, MinikubeCluster, KindClusterConfig,
+    // workloads
+    PodsPage, Deployment, ReplicaSetVsStatefulSetPage, RollingUpdatesPage, DaemonSets, JobsAndCronJobs,
+    // storage
+    PersistentVolume, PersistentVolumeClaim, StorageClass, StorageOverview,
+    // notfound
+    NotFoundPage
+
 }

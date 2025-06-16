@@ -21,7 +21,7 @@ export default function Navbar() {
     "px-4 py-2 hover:bg-[#00df9a] hover:text-black rounded-xl transition-all duration-300";
 
   return (
-    <nav className="bg-black text-white h-24 shadow-lg">
+    <nav className="bg-gray-950 text-white h-24 shadow-lg">
       <div className="flex justify-between items-center max-w-[1240px] mx-auto px-4 h-full">
         <h1 className="text-3xl font-bold text-[#00df9a]">DevWithK8s</h1>
 
