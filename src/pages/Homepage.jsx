@@ -44,8 +44,8 @@ const categories = [
     {
         title: "Networking",
         links: [
-            { name: "Services", path: "/services" },
-            { name: "Ingress", path: "/ingress" },
+            { name: "Services", path: "/networking/services" },
+            { name: "Ingress", path: "/networking/ingress" },
         ],
     },
     {

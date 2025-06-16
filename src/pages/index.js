@@ -26,13 +26,16 @@ import PersistentVolumeClaim from "./storage/PersistentVolumeClaim";
 import StorageClass from "./storage/StorageClass";
 import StorageOverview from "./storage/StorageOverview";
 
+// networking
+import ServicesPage from "./networking/Services";
+import IngressPage from "./networking/Ingress";
+
 // error page
 import NotFoundPage from "./ErrorPage";
 
 export {
     Homepage,
     CheatSheet,
-
     // basics
     KubernetesIntro, KubernetesArchitecture, MonolithicVsMicroservices, KindClusterInstallation,
     // Clusters
@@ -41,6 +44,8 @@ export {
     PodsPage, Deployment, ReplicaSetVsStatefulSetPage, RollingUpdatesPage, DaemonSets, JobsAndCronJobs,
     // storage
     PersistentVolume, PersistentVolumeClaim, StorageClass, StorageOverview,
+    // Networking
+    ServicesPage, IngressPage,
     // notfound
     NotFoundPage
 

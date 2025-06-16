@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Base, ScrollToTop } from "./components";
 
-import { CheatSheet, DaemonSets, Deployment, Homepage, JobsAndCronJobs, KindClusterConfig, KindClusterInstallation, KubernetesArchitecture, KubernetesIntro, MinikubeCluster, MonolithicVsMicroservices, NamespacesPage, NotFoundPage, PersistentVolume, PersistentVolumeClaim, PodsPage, ReplicaSetVsStatefulSetPage, RollingUpdatesPage, StorageClass, StorageOverview } from "./pages";
+import { CheatSheet, DaemonSets, Deployment, Homepage, IngressPage, JobsAndCronJobs, KindClusterConfig, KindClusterInstallation, KubernetesArchitecture, KubernetesIntro, MinikubeCluster, MonolithicVsMicroservices, NamespacesPage, NotFoundPage, PersistentVolume, PersistentVolumeClaim, PodsPage, ReplicaSetVsStatefulSetPage, RollingUpdatesPage, ServicesPage, StorageClass, StorageOverview } from "./pages";
 
 export default function App() {
   return (
@@ -49,6 +49,11 @@ export default function App() {
             <Route path="persistent-volume-claim" element={<PersistentVolumeClaim />} />
           </Route>
 
+          <Route path="networking">
+            <Route index element={<Navigate to="services" replace />} />
+            <Route path="services" element={<ServicesPage />} />
+            <Route path="ingress" element={<IngressPage />} />
+          </Route>
 
           {/* 404 error page  */}
           <Route path="*" element={<NotFoundPage />} />
