@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Base, ScrollToTop } from "./components";
 
-import { CheatSheet, DaemonSets, Deployment, Homepage, IngressPage, JobsAndCronJobs, KindClusterConfig, KindClusterInstallation, KubernetesArchitecture, KubernetesIntro, MinikubeCluster, MonolithicVsMicroservices, NamespacesPage, NotFoundPage, PersistentVolume, PersistentVolumeClaim, PodsPage, ReplicaSetVsStatefulSetPage, RollingUpdatesPage, ServicesPage, StorageClass, StorageOverview } from "./pages";
+import { Annotations, CheatSheet, ConfigMaps, DaemonSets, Deployment, Homepage, IngressPage, JobsAndCronJobs, KindClusterConfig, KindClusterInstallation, KubernetesArchitecture, KubernetesIntro, MinikubeCluster, MonolithicVsMicroservices, NamespacesPage, NotFoundPage, PersistentVolume, PersistentVolumeClaim, PodsPage, ReplicaSetVsStatefulSetPage, RollingUpdatesPage, Secrets, ServicesPage, StorageClass, StorageOverview } from "./pages";
 
 export default function App() {
   return (
@@ -48,12 +48,21 @@ export default function App() {
             <Route path="storage-classes" element={<StorageClass />} />
             <Route path="persistent-volume-claim" element={<PersistentVolumeClaim />} />
           </Route>
-
+          {/* networking */}
           <Route path="networking">
             <Route index element={<Navigate to="services" replace />} />
             <Route path="services" element={<ServicesPage />} />
             <Route path="ingress" element={<IngressPage />} />
           </Route>
+
+          {/* configuration */}
+          <Route path="configuration">
+            <Route index element={<Navigate to="annotations" replace />} />
+            <Route path="annotations" element={<Annotations />} />
+            <Route path="config-maps" element={<ConfigMaps />} />
+            <Route path="secrets" element={<Secrets />} />
+          </Route>
+
 
           {/* 404 error page  */}
           <Route path="*" element={<NotFoundPage />} />

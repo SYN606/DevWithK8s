@@ -30,6 +30,11 @@ import StorageOverview from "./storage/StorageOverview";
 import ServicesPage from "./networking/Services";
 import IngressPage from "./networking/Ingress";
 
+// configuration
+import Secrets from "./configuration/Secrets";
+import Annotations from "./configuration/Annotations";
+import ConfigMaps from "./configuration/ConfigMaps";
+
 // error page
 import NotFoundPage from "./ErrorPage";
 
@@ -46,6 +51,8 @@ export {
     PersistentVolume, PersistentVolumeClaim, StorageClass, StorageOverview,
     // Networking
     ServicesPage, IngressPage,
+    //configuration
+    Secrets, Annotations, ConfigMaps,
     // notfound
     NotFoundPage
 

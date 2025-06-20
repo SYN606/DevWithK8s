@@ -51,9 +51,9 @@ const categories = [
     {
         title: "Configuration",
         links: [
-            { name: "Annotations", path: "/annotations" },
-            { name: "ConfigMaps", path: "/configmaps" },
-            { name: "Secrets", path: "/secrets" },
+            { name: "Annotations", path: "configuration/annotations" },
+            { name: "ConfigMaps", path: "configuration/config-maps" },
+            { name: "Secrets", path: "configuration/secrets" },
         ],
     },
     {

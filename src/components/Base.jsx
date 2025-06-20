@@ -6,7 +6,7 @@ export default function Base() {
     return (
         <>
             <Navbar />
-            <Outlet />
+            <Outlet className="bg-gray-950" />
             <Footer />
         </>
     );
