@@ -166,9 +166,9 @@ spec:
 
                 {/* Navigation */}
                 <PageNavigation
-                    leftPath="/basics/pods"
+                    leftPath="/clusters"
                     leftLabel="Pods"
-                    rightPath="/basics/rs-vs-sts"
+                    rightPath="/clusters/rs-vs-sts"
                     rightLabel="ReplicaSet vs StatefulSet"
                 />
             </div>

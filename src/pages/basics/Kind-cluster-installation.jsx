@@ -110,7 +110,7 @@ echo "kind & kubectl installation complete."`}</pre>
             </div>
 
             <PageNavigation
-                leftPath="basics/architecture-of-k8s"
+                leftPath="/basics/architecture-of-k8s"
                 leftLabel="Architecture of Kubernetes"
                 rightPath="/clusters/kind-cluster-config"
                 rightLabel="Kind Cluster Creation"

@@ -8,6 +8,8 @@ import {
     FiBarChart2,
     FiKey,
 } from 'react-icons/fi';
+import { PageNavigation } from '../../components'
+
 
 const NamespacesPage = () => {
     return (
@@ -180,6 +182,12 @@ spec:
                     </p>
                 </section>
             </div>
+            <PageNavigation
+                leftPath="/clusters/minikube-clusters"
+                leftLabel="Introduction to Kubernetes"
+                rightPath="/workloads"
+                rightLabel="Pods"
+            />
         </div>
     );
 };

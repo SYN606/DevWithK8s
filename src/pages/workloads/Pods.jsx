@@ -101,7 +101,7 @@ spec:
                 <PageNavigation
                     leftPath="/clusters/namespaces"
                     leftLabel="Namespaces"
-                    rightPath="/kind-clusters/deployment"
+                    rightPath="/workloads/deployment"
                     rightLabel="Deployments"
                 />
             </div>

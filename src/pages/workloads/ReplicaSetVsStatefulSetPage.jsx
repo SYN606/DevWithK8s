@@ -5,6 +5,7 @@ import {
     FaArrowRight
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { PageNavigation } from '../../components';
 
 const ReplicaSetVsStatefulSetPage = () => {
     return (
@@ -169,6 +170,12 @@ kubectl rollout undo deployment <name>`}
                         <li><strong>Deployment:</strong> Frontend apps, APIs, stateless workloads with frequent version updates.</li>
                     </ul>
                 </section>
+                <PageNavigation
+                    leftPath="/workloads/deployment"
+                    leftLabel="Deployments"
+                    rightPath=""
+                    rightLabel=""
+                />
             </div>
         </div>
     );

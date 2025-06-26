@@ -171,10 +171,10 @@ nodes:
             </div>
 
             <PageNavigation
-                leftPath="/basics/intro"
-                leftLabel="Introduction to Kubernetes"
-                rightPath="/basics/architecture-of-k8s"
-                rightLabel="Kubernetes Architecture"
+                leftPath="/basics/introduction-to-kind-cluster-and-setup"
+                leftLabel="Kind Cluster | Setup"
+                rightPath="/clusters/minikube-clusters"
+                rightLabel="Minikube"
             />
         </div>
     );

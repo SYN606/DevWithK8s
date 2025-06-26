@@ -10,30 +10,30 @@ import {
     FiBookOpen,
 } from "react-icons/fi";
 
+import { PageNavigation } from "../../components";
+
 export default function MinikubeCluster() {
     return (
-        <div className="bg-[#0f172a] text-gray-300 font-sans p-8 min-h-screen">
+        <div className="bg-gray-950 text-gray-300 font-sans p-6 sm:p-8 min-h-screen">
             <div className="max-w-5xl mx-auto">
-                <h1 className="text-4xl font-bold text-cyan-400 mb-4 flex items-center gap-3">
+                <h1 className="text-4xl font-bold text-cyan-400 mb-6 flex items-center gap-3">
                     <FiCpu className="w-8 h-8" />
                     Minikube Cluster: Installation & Creation
                 </h1>
 
-                <p className="text-lg mb-6">
-                    <span className="text-yellow-400 font-semibold">Minikube</span> is a
-                    tool that runs a single-node Kubernetes cluster locally on your
-                    machine, mainly for learning and development purposes.
+                <p className="text-lg mb-8 text-gray-400">
+                    <span className="text-yellow-400 font-semibold">Minikube</span> runs a local, single-node Kubernetes cluster for development and testing. It's ideal for learning Kubernetes without deploying to the cloud.
                 </p>
 
                 <Section
                     icon={<FiInfo className="w-6 h-6" />}
                     title="What is Minikube?"
                     items={[
-                        "Runs a lightweight Kubernetes cluster locally using a VM or container runtime.",
-                        "Supports Windows, macOS, and Linux.",
-                        "Great for Kubernetes learning, testing, and development.",
+                        "Runs Kubernetes locally using VM or container runtimes.",
+                        "Compatible with Windows, macOS, and Linux.",
+                        "Ideal for testing and learning Kubernetes.",
                         "Supports different Kubernetes versions.",
-                        "Includes add-ons like dashboard, ingress, metrics-server.",
+                        "Includes optional add-ons (dashboard, ingress, metrics-server).",
                     ]}
                 />
 
@@ -41,16 +41,16 @@ export default function MinikubeCluster() {
                     icon={<FiTool className="w-6 h-6" />}
                     title="Prerequisites"
                     items={[
-                        "Virtualization must be enabled (Intel VT-x / AMD-V).",
-                        "A supported hypervisor like VirtualBox, HyperKit, or Docker.",
-                        "kubectl CLI must be installed and configured.",
+                        "Virtualization enabled (Intel VT-x / AMD-V).",
+                        "Installed hypervisor: VirtualBox, Docker, HyperKit, etc.",
+                        "`kubectl` command-line tool installed.",
                     ]}
                 />
 
                 <CodeSection
                     icon={<FiDownload className="w-6 h-6" />}
                     title="Installing Minikube & kubectl"
-                    description="Use the following script to install minikube and kubectl on Linux:"
+                    description="Install both tools using the following shell script:"
                     code={`#!/bin/bash
 # Install Minikube
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
@@ -75,26 +75,26 @@ kubectl version --client`}
                 <CodeSection
                     icon={<FiPlayCircle className="w-6 h-6" />}
                     title="Creating a Minikube Cluster"
-                    description="To start a default single-node cluster with Docker as the driver:"
+                    description="Start a single-node cluster using Docker driver:"
                     code={`minikube start --driver=docker`}
                 />
 
-                <p className="text-gray-300 mt-2 mb-6">
-                    You can also specify version and other options:
+                <p className="text-gray-400 mt-2 mb-4">
+                    You can also specify a Kubernetes version and hypervisor driver:
                 </p>
 
-                <pre className="bg-black p-3 rounded text-green-400 text-sm overflow-x-auto">
+                <div className="bg-black p-3 rounded text-green-400 text-sm overflow-x-auto font-mono mb-8">
                     minikube start --kubernetes-version=v1.30.0 --driver=virtualbox
-                </pre>
+                </div>
 
                 <Section
                     icon={<FiSettings className="w-6 h-6" />}
                     title="Managing the Minikube Cluster"
                     items={[
-                        "`minikube status` — Show cluster status.",
-                        "`minikube dashboard` — Launch dashboard.",
-                        "`minikube stop` — Stop the cluster.",
-                        "`minikube delete` — Delete the cluster.",
+                        "`minikube status` — Display current cluster status.",
+                        "`minikube dashboard` — Launch the Kubernetes dashboard.",
+                        "`minikube stop` — Stop the running cluster.",
+                        "`minikube delete` — Remove the cluster completely.",
                     ]}
                 />
 
@@ -102,11 +102,11 @@ kubectl version --client`}
                     icon={<FiLayers className="w-6 h-6" />}
                     title="Advanced Usage"
                     items={[
-                        "You can create and switch between multiple clusters using `--profile`.",
-                        "`minikube tunnel` lets you expose services with LoadBalancer type.",
-                        "Enable useful add-ons: `minikube addons enable ingress`.",
-                        "Access cluster services: `minikube service <svc-name>`.",
-                        "`kubectl` works automatically once the cluster is started.",
+                        "Use `--profile` to manage multiple clusters.",
+                        "`minikube tunnel` exposes LoadBalancer services.",
+                        "Enable add-ons: `minikube addons enable ingress`.",
+                        "Access service URLs: `minikube service <svc-name>`.",
+                        "`kubectl` auto-configured when cluster is running.",
                     ]}
                 />
 
@@ -119,39 +119,46 @@ kubectl version --client`}
                     ]}
                 />
             </div>
+
+            <PageNavigation
+                leftPath="/clusters/kind-cluster-config"
+                leftLabel="Introduction to Kubernetes"
+                rightPath="/clusters/namespaces"
+                rightLabel="Name Spcaes"
+            />
         </div>
     );
 }
 
 function Section({ icon, title, items }) {
     return (
-        <div>
-            <h2 className="text-2xl font-bold text-emerald-400 mt-8 mb-2 flex items-center gap-2">
+        <section className="mb-8">
+            <h2 className="text-2xl font-bold text-emerald-400 mt-8 mb-3 flex items-center gap-2">
                 {icon}
                 {title}
             </h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-300 mb-6">
+            <ul className="list-disc pl-6 space-y-2 text-gray-300">
                 {items.map((item, idx) => (
                     <li key={idx}>
                         <code className="text-yellow-400">{item}</code>
                     </li>
                 ))}
             </ul>
-        </div>
+        </section>
     );
 }
 
 function CodeSection({ icon, title, description, code }) {
     return (
-        <div>
-            <h2 className="text-2xl font-bold text-emerald-400 mt-8 mb-2 flex items-center gap-2">
+        <section className="mb-10">
+            <h2 className="text-2xl font-bold text-emerald-400 mt-8 mb-3 flex items-center gap-2">
                 {icon}
                 {title}
             </h2>
-            {description && <p className="text-gray-300 mb-4">{description}</p>}
-            <div className="bg-gray-800 p-4 rounded-lg text-sm text-green-400 mb-6 overflow-x-auto font-mono whitespace-pre-wrap select-all">
+            {description && <p className="text-gray-400 mb-4">{description}</p>}
+            <div className="bg-gray-800 p-4 rounded-lg text-sm text-green-400 overflow-x-auto font-mono whitespace-pre-wrap select-all">
                 <pre>{code}</pre>
             </div>
-        </div>
+        </section>
     );
 }
