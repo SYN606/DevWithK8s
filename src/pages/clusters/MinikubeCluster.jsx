@@ -14,8 +14,8 @@ import { PageNavigation } from "../../components";
 
 export default function MinikubeCluster() {
     return (
-        <div className="bg-gray-950 text-gray-300 font-sans p-6 sm:p-8 min-h-screen">
-            <div className="max-w-5xl mx-auto">
+        <main className="bg-gray-950 text-gray-300 font-sans px-4 md:px-6 lg:px-8 py-8">
+            <div className="max-w-3xl mx-auto">
                 <h1 className="text-4xl font-bold text-cyan-400 mb-6 flex items-center gap-3">
                     <FiCpu className="w-8 h-8" />
                     Minikube Cluster: Installation & Creation
@@ -126,7 +126,7 @@ kubectl version --client`}
                 rightPath="/clusters/namespaces"
                 rightLabel="Name Spcaes"
             />
-        </div>
+        </main>
     );
 }
 

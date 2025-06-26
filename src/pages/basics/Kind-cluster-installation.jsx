@@ -7,17 +7,14 @@ import {
     FiCheckCircle,
     FiPlayCircle,
     FiSettings,
-    FiArrowLeft,
-    FiArrowRight
 } from "react-icons/fi";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { PageNavigation } from "../../components";
 
 const KindClusterInstallation = () => {
     return (
-        <div className="bg-gray-950 text-gray-300 font-sans p-8 min-h-screen">
-            <div className="max-w-5xl mx-auto">
+        <main className="bg-gray-950 text-gray-300 font-sans px-4 md:px-6 lg:px-8 py-8">
+            <div className="max-w-3xl mx-auto">
                 <motion.h1
                     className="text-4xl font-bold text-cyan-400 mb-4 flex items-center gap-3"
                     initial={{ opacity: 1, y: -20 }}
@@ -54,9 +51,9 @@ const KindClusterInstallation = () => {
                         <pre>GO111MODULE="on" go install sigs.k8s.io/kind@v0.22.0</pre>
 
                         <p className="mt-4 mb-2">Or install using prebuilt binary (Linux/Mac):</p>
-                        <pre>curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.22.0/kind-linux-amd64
-                            chmod +x ./kind
-                            sudo mv ./kind /usr/local/bin/kind</pre>
+                        <pre>{`curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.22.0/kind-linux-amd64
+chmod +x ./kind
+sudo mv ./kind /usr/local/bin/kind`}</pre>
                     </div>
                 </Section>
 
@@ -107,15 +104,14 @@ echo "kind & kubectl installation complete."`}</pre>
                     </ul>
                 </Section>
 
+                <PageNavigation
+                    leftPath="/basics/architecture-of-k8s"
+                    leftLabel="Architecture of Kubernetes"
+                    rightPath="/clusters/kind-cluster-config"
+                    rightLabel="Kind Cluster Creation"
+                />
             </div>
-
-            <PageNavigation
-                leftPath="/basics/architecture-of-k8s"
-                leftLabel="Architecture of Kubernetes"
-                rightPath="/clusters/kind-cluster-config"
-                rightLabel="Kind Cluster Creation"
-            />
-        </div>
+        </main>
     );
 };
 

@@ -1,12 +1,10 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { PageNavigation } from '../../components';
 
 export default function KubernetesArchitecture() {
     return (
-        <main className="bg-gray-950 text-white font-sans p-8">
-            <div className="max-w-5xl mx-auto">
+        <main className="bg-gray-950 text-white font-sans px-4 md:px-6 lg:px-8 py-8">
+            <div className="max-w-3xl mx-auto">
                 <motion.h1
                     className="text-4xl font-bold text-blue-400 mb-4"
                     initial={{ opacity: 0, y: -20 }}
@@ -21,7 +19,7 @@ export default function KubernetesArchitecture() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.1 }}
                 >
-                    Kubernetes follows a client-server architecture with a centralized{' '}
+                    Kubernetes follows a client-server architecture with a centralised{' '}
                     <span className="text-yellow-300 font-semibold">Control Plane</span> and multiple{' '}
                     <span className="text-yellow-300 font-semibold">Worker Nodes</span>. The interaction between components is
                     managed via the <span className="text-green-400 font-semibold">kubectl</span> CLI tool.
@@ -56,19 +54,18 @@ export default function KubernetesArchitecture() {
                     transition={{ delay: 0.2 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-2xl font-bold text-green-400 mb-2">🔧 Kubectl
-                    </h2>
+                    <h2 className="text-2xl font-bold text-green-400 mb-2">🔧 Kubectl</h2>
                     <p className="text-gray-300 mb-4">
                         Kubectl is the CLI tool used to interact with the Kubernetes API server.
                     </p>
                     <div className="bg-gray-800 p-4 rounded-lg">
                         <p className="text-sm text-gray-300 mb-2">Examples:</p>
                         <pre className="bg-black p-3 rounded text-green-300 text-sm overflow-x-auto">
-                            kubectl get nodes             # List all nodes
-                            kubectl get pods              # List all pods in current namespace
-                            kubectl describe pod &lt;pod-name&gt;  # Get detailed info about a pod
-                            kubectl apply -f pod.yaml     # Apply a YAML file
-                            kubectl delete pod &lt;pod-name&gt;    # Delete a specific pod
+                            {`kubectl get nodes             # List all nodes
+kubectl get pods              # List all pods in current namespace
+kubectl describe pod <pod-name>  # Get detailed info about a pod
+kubectl apply -f pod.yaml     # Apply a YAML file
+kubectl delete pod <pod-name>    # Delete a specific pod`}
                         </pre>
                     </div>
                 </motion.div>
@@ -80,31 +77,30 @@ export default function KubernetesArchitecture() {
                     transition={{ delay: 0.3 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-2xl font-bold text-green-400 mb-4">🧹 Logical Architecture
-                    </h2>
+                    <h2 className="text-2xl font-bold text-green-400 mb-4">🧹 Logical Architecture</h2>
                     <div className="bg-gray-800 p-6 rounded-lg">
                         <pre className="text-sm text-gray-200 overflow-x-auto whitespace-pre-wrap">
-                            +-------------------+
-                            |    kubectl CLI    |
-                            +--------+----------+
-                            |
-                            v
-                            +------------------------+
-                            | API Server (Control Plane) |
-                            +--------+----------+----------+----------+
-                            |          |          |          |
-                            v          v          v          v
-                            etcd   Scheduler   Controller   Cloud Controller
-                            Manager         Manager
-                            |
-                            v
-                            +----------------+
-                            |  Worker Nodes  |
-                            +----------------+
-                            |  Kubelet       |
-                            |  Kube Proxy    |
-                            |  Containerd    |
-                            +----------------+
+                            {`+-------------------+
+|    kubectl CLI    |
++--------+----------+
+         |
+         v
++---------------------------+
+|  API Server (Control Plane) |
++--------+----------+----------+----------+
+|        |          |          |
+v        v          v          v
+etcd  Scheduler  Controller  Cloud Controller
+                 Manager       Manager
+         |
+         v
+  +----------------+
+  |  Worker Nodes  |
+  +----------------+
+  |  Kubelet       |
+  |  Kube Proxy    |
+  |  Containerd    |
+  +----------------+`}
                         </pre>
                     </div>
                 </motion.div>
@@ -118,8 +114,9 @@ export default function KubernetesArchitecture() {
             </div>
         </main>
     );
-};
+}
 
+// Reusable Section Component
 const Section = ({ title, description, items }) => (
     <motion.div
         className="mt-8"
@@ -139,4 +136,3 @@ const Section = ({ title, description, items }) => (
         </ul>
     </motion.div>
 );
-

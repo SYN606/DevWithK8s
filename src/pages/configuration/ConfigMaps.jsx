@@ -10,7 +10,7 @@ import {
 export default function ConfigMaps() {
     return (
         <div className="bg-gray-950 text-gray-300 font-sans p-8 min-h-screen">
-            <div className="max-w-5xl mx-auto">
+            <div className="max-w-3xl mx-auto">
                 <h1 className="text-4xl font-bold text-cyan-400 mb-6 flex items-center gap-3">
                     <FaClipboardList className="w-8 h-8" />
                     Kubernetes ConfigMaps: Externalized Configuration Management

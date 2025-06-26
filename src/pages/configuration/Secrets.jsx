@@ -26,7 +26,7 @@ const Section = ({ icon: Icon, title, children }) => (
 export default function Secrets() {
     return (
         <div className="bg-gray-950 text-gray-300 font-sans p-8 min-h-screen">
-            <div className="max-w-5xl mx-auto">
+            <div className="max-w-3xl mx-auto">
                 <motion.h1
                     className="text-4xl font-bold text-center text-red-400 mb-10"
                     initial={{ opacity: 0 }}
