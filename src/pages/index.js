@@ -35,6 +35,13 @@ import Secrets from "./configuration/Secrets";
 import Annotations from "./configuration/Annotations";
 import ConfigMaps from "./configuration/ConfigMaps";
 
+// sc and sch
+import HPA from "./sc-and-sch/HPA";
+import VPA from "./sc-and-sch/VPA";
+import NodeAffinity from "./sc-and-sch/NodeAffinity";
+import Probes from "./sc-and-sch/Probes";
+import TaintsTolerations from "./sc-and-sch/TaintsAndTolerants";
+
 // error page
 import NotFoundPage from "./ErrorPage";
 
@@ -53,6 +60,8 @@ export {
     ServicesPage, IngressPage,
     //configuration
     Secrets, Annotations, ConfigMaps,
+    // sc and sch
+    HPA, VPA, NodeAffinity, Probes, TaintsTolerations,
     // notfound
     NotFoundPage
 

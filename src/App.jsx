@@ -2,12 +2,16 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Base, ScrollToTop } from "./components";
 import {
   Annotations, CheatSheet, ConfigMaps, DaemonSets, Deployment, Homepage,
+  HPA,
   IngressPage, JobsAndCronJobs, KindClusterConfig, KindClusterInstallation,
   KubernetesArchitecture, KubernetesIntro, MinikubeCluster,
-  MonolithicVsMicroservices, NamespacesPage, NotFoundPage,
+  MonolithicVsMicroservices, NamespacesPage, NodeAffinity, NotFoundPage,
   PersistentVolume, PersistentVolumeClaim, PodsPage,
+  Probes,
   ReplicaSetVsStatefulSetPage, RollingUpdatesPage, Secrets,
-  ServicesPage, StorageClass, StorageOverview
+  ServicesPage, StorageClass, StorageOverview,
+  TaintsTolerations,
+  VPA
 } from "./pages";
 
 import { Analytics } from '@vercel/analytics/react';
@@ -53,6 +57,14 @@ const configRoutes = [
   { path: "config-maps", element: <ConfigMaps /> },
   { path: "secrets", element: <Secrets /> }
 ];
+
+const scalingAndSchedulingRoutes = [
+  { path: "probes", element: <Probes /> },
+  { path: "taints-and-tolerations", element: <TaintsTolerations /> },
+  { path: "HPA", element: <HPA /> },
+  { path: "VPA", element: <VPA /> },
+  { path: "node-affinity", element: <NodeAffinity /> },
+]
 
 export default function App() {
   return (
@@ -103,6 +115,13 @@ export default function App() {
             <Route path="configuration">
               <Route index element={<Navigate to="annotations" replace />} />
               {configRoutes.map(({ path, element }) => (
+                <Route key={path} path={path} element={element} />
+              ))}
+            </Route>
+
+            <Route path="scaling-and-scheduling">
+              <Route index element={<Navigate to="probes" replace />} />
+              {scalingAndSchedulingRoutes.map(({ path, element }) => (
                 <Route key={path} path={path} element={element} />
               ))}
             </Route>

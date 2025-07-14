@@ -59,11 +59,11 @@ const categories = [
     {
         title: "Scaling & Scheduling",
         links: [
-            { name: "Probes", path: "/probes" },
-            { name: "Taints & Tolerations", path: "/taints" },
-            { name: "HPA", path: "/hpa" },
-            { name: "VPA", path: "/vpa" },
-            { name: "Node Affinity", path: "/affinity" },
+            { name: "Probes", path: "scaling-and-scheduling/probes" },
+            { name: "Taints & Tolerations", path: "scaling-and-scheduling/taints-and-tolerations" },
+            { name: "HPA", path: "scaling-and-scheduling/HPA" },
+            { name: "VPA", path: "scaling-and-scheduling/VPA" },
+            { name: "Node Affinity", path: "scaling-and-scheduling/node-affinity" },
         ],
     },
     {
