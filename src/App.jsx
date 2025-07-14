@@ -3,6 +3,7 @@ import { Base, ScrollToTop } from "./components";
 import {
   Annotations, CheatSheet, ConfigMaps, DaemonSets, Deployment, Homepage,
   HPA,
+  IdeaPage,
   IngressPage, JobsAndCronJobs, KindClusterConfig, KindClusterInstallation,
   KubernetesArchitecture, KubernetesIntro, MinikubeCluster,
   MonolithicVsMicroservices, NamespacesPage, NodeAffinity, NotFoundPage,
@@ -71,6 +72,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Base />}>
             <Route index element={<Homepage />} />
+            <Route path="idea" element={<IdeaPage />} />
             <Route path="cheat-sheet" element={<CheatSheet />} />
 
             {/* Grouped Routes */}

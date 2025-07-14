@@ -1,5 +1,6 @@
 import Homepage from "./Homepage";
 import CheatSheet from "./CheatSheet";
+import IdeaPage from "./IdeaPage";
 
 // basics
 import KubernetesIntro from "./basics/Intro";
@@ -46,8 +47,7 @@ import TaintsTolerations from "./sc-and-sch/TaintsAndTolerants";
 import NotFoundPage from "./ErrorPage";
 
 export {
-    Homepage,
-    CheatSheet,
+    Homepage, CheatSheet, IdeaPage,
     // basics
     KubernetesIntro, KubernetesArchitecture, MonolithicVsMicroservices, KindClusterInstallation,
     // Clusters
