@@ -82,7 +82,7 @@ const categories = [
             { name: "Istio Service Mesh", path: "/istio" },
         ],
     },
-];
+]
 
 export default function Homepage() {
     const [search, setSearch] = useState("");
@@ -95,73 +95,71 @@ export default function Homepage() {
     }));
 
     return (
-        <div className="bg-gray-950 text-white min-h-screen px-6 py-10 font-sans">
-            <div className="max-w-4xl mx-auto">
+        <div className="bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white min-h-screen px-4 py-10 font-sans">
+            <div className="max-w-5xl mx-auto">
+                {/* Header */}
                 <motion.h1
-                    className="text-4xl font-bold text-blue-400 text-center mb-4"
+                    className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                 >
-                    📘 Kubernetes with Kind – Notes Hub
+                    🚀 Kubernetes with Kind
                 </motion.h1>
-
                 <p className="text-center text-lg text-gray-300 mb-8">
-                    A centralized collection of comprehensive Kubernetes notes using{" "}
-                    <span className="text-yellow-300 font-semibold">Kind</span> clusters and{" "}
-                    <span className="text-yellow-300 font-semibold">kubectl</span> commands.
+                    Learn Kubernetes faster with curated notes, Kind clusters, and practical <span className="text-green-400 font-semibold">kubectl</span> commands.
                 </p>
 
+                {/* Search Bar */}
+                <div className="relative max-w-md mx-auto mb-10">
+                    <input
+                        type="text"
+                        placeholder="🔍 Search topics..."
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        className="w-full px-4 py-3 rounded-full bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                    <TbSearch className="absolute right-4 top-3.5 text-gray-400" size={20} />
+                </div>
+
+                {/* Cheat Sheet Highlight */}
                 <div className="mb-12 grid md:grid-cols-2 gap-6">
                     <Link
                         to="/cheat-sheet"
-                        className="bg-blue-700 hover:bg-blue-800 p-6 rounded-xl shadow transition duration-300"
+                        className="bg-blue-700 hover:bg-blue-800 p-6 rounded-2xl shadow-lg transition duration-300 transform hover:-translate-y-1"
                     >
                         <h2 className="text-xl font-bold mb-2">📄 Kind + Kubectl Commands</h2>
-                        <p className="text-sm text-gray-300">
-                            CLI commands from basic to advanced for working with Kubernetes clusters.
+                        <p className="text-gray-200 text-sm">
+                            Quick reference for essential CLI commands to manage clusters.
                         </p>
                     </Link>
                 </div>
 
-                <div className="bg-gray-900 p-6 rounded-xl shadow-lg">
-                    <div className="flex items-center justify-between mb-4">
-                        <h2 className="text-2xl font-bold text-green-400 flex items-center gap-2">
-                            <TbBook2 size={24} /> Kubernetes Syllabus
-                        </h2>
-                        <div className="relative w-1/2">
-                            <input
-                                type="text"
-                                placeholder="Search topics..."
-                                value={search}
-                                onChange={(e) => setSearch(e.target.value)}
-                                className="w-full px-4 py-2 text-sm text-white bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                            />
-                            <TbSearch className="absolute right-3 top-2.5 w-4 h-4 text-gray-400" />
-                        </div>
-                    </div>
-
+                {/* Categories Grid */}
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredCategories.map(
                         (category) =>
                             category.links.length > 0 && (
-                                <div key={category.title} className="mb-6">
-                                    <h3 className="text-lg font-semibold text-blue-300 mb-2">{category.title}</h3>
-                                    <ul className="space-y-1 list-disc list-inside text-gray-300 text-sm md:text-base">
+                                <motion.div
+                                    key={category.title}
+                                    whileHover={{ scale: 1.03 }}
+                                    className="bg-gray-800 rounded-xl p-5 shadow-lg"
+                                >
+                                    <h3 className="text-lg font-semibold text-blue-300 mb-3">
+                                        {category.title}
+                                    </h3>
+                                    <ul className="space-y-2">
                                         {category.links.map((link) => (
-                                            <motion.li
-                                                key={link.path}
-                                                whileHover={{ scale: 1.02, x: 6 }}
-                                                transition={{ duration: 0.2 }}
-                                            >
+                                            <li key={link.path}>
                                                 <Link
                                                     to={link.path}
-                                                    className="hover:text-green-300 transition-colors duration-200"
+                                                    className="block text-gray-300 hover:text-green-400 transition-colors duration-200"
                                                 >
-                                                    {link.name}
+                                                    • {link.name}
                                                 </Link>
-                                            </motion.li>
+                                            </li>
                                         ))}
                                     </ul>
-                                </div>
+                                </motion.div>
                             )
                     )}
                 </div>

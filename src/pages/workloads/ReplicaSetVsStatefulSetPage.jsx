@@ -1,15 +1,13 @@
 import {
     FaLayerGroup,
     FaTerminal,
-    FaArrowLeft,
-    FaArrowRight
+
 } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import { PageNavigation } from '../../components';
+
 
 const ReplicaSetVsStatefulSetPage = () => {
     return (
-        <div className="bg-[#0f172a] text-gray-100 p-8 font-sans min-h-screen">
+        <div className="bg-gray-950 text-gray-100 p-8 font-sans min-h-screen">
             <div className="max-w-6xl mx-auto">
                 <h1 className="text-4xl font-bold text-indigo-400 mb-8 flex items-center gap-3">
                     <FaLayerGroup className="w-10 h-10" />
@@ -170,12 +168,7 @@ kubectl rollout undo deployment <name>`}
                         <li><strong>Deployment:</strong> Frontend apps, APIs, stateless workloads with frequent version updates.</li>
                     </ul>
                 </section>
-                <PageNavigation
-                    leftPath="/workloads/deployment"
-                    leftLabel="Deployments"
-                    rightPath=""
-                    rightLabel=""
-                />
+
             </div>
         </div>
     );

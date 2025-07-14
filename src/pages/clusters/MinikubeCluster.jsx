@@ -10,8 +10,6 @@ import {
     FiBookOpen,
 } from "react-icons/fi";
 
-import { PageNavigation } from "../../components";
-
 export default function MinikubeCluster() {
     return (
         <main className="bg-gray-950 text-gray-300 font-sans px-4 md:px-6 lg:px-8 py-8">
@@ -120,12 +118,6 @@ kubectl version --client`}
                 />
             </div>
 
-            <PageNavigation
-                leftPath="/clusters/kind-cluster-config"
-                leftLabel="Introduction to Kubernetes"
-                rightPath="/clusters/namespaces"
-                rightLabel="Name Spcaes"
-            />
         </main>
     );
 }

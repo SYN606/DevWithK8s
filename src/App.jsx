@@ -14,9 +14,6 @@ import {
   VPA
 } from "./pages";
 
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/react';
-
 
 const basicRoutes = [
   { path: "intro", element: <KubernetesIntro /> },
@@ -130,8 +127,6 @@ export default function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      <Analytics />
-      <SpeedInsights />
     </>
   );
 }

@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { PageNavigation } from "../../components";
 
 
 export default function KubernetesIntro() {
     return (
         <div className="bg-gray-950 text-white font-sans p-8 leading-relaxed min-h-screen">
-            <div className="max-w-3xl mx-auto">
+            <div className="mx-auto">
                 <motion.h1
                     className="text-4xl font-bold text-blue-400 mb-4"
                     initial={{ opacity: 0, y: -20 }}
@@ -88,13 +87,7 @@ export default function KubernetesIntro() {
                         <li>Horizontal scaling</li>
                     </ul>
                 </motion.div>
-
-                <PageNavigation
-                    leftPath="/"
-                    leftLabel="Homepage"
-                    rightPath="/basics/monolith-vs-microservice"
-                    rightLabel="Monolithic Vs Microservices"
-                />
+                
             </div>
         </div>
     );

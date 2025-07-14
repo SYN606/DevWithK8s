@@ -7,7 +7,7 @@ import {
     FiAlertCircle,
     FiTerminal
 } from "react-icons/fi";
-// import { PageNavigation } from "../../components";
+
 
 const IngressPage = () => {
     return (

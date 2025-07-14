@@ -4,12 +4,11 @@ import {
     FiSettings,
     FiBox,
 } from "react-icons/fi";
-import { PageNavigation } from "../../components";
 
 export default function KindClusterConfig() {
     return (
         <div className="bg-gray-950 text-gray-300 font-sans p-8 min-h-screen">
-            <div className="max-w-5xl mx-auto">
+            <div className="mx-auto">
                 <h1 className="text-4xl font-bold text-cyan-400 mb-4 flex items-center gap-3">
                     <FiBox className="w-8 h-8" />
                     KIND Cluster Creation & Config File
@@ -169,13 +168,6 @@ nodes:
                     </li>
                 </ul>
             </div>
-
-            <PageNavigation
-                leftPath="/basics/introduction-to-kind-cluster-and-setup"
-                leftLabel="Kind Cluster | Setup"
-                rightPath="/clusters/minikube-clusters"
-                rightLabel="Minikube"
-            />
         </div>
     );
 }

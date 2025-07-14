@@ -1,4 +1,3 @@
-import { PageNavigation } from "../../components";
 import { FiLayers, FiInfo, FiStar, FiFileText, FiRefreshCw, FiBarChart2, FiTerminal, FiCheckCircle } from "react-icons/fi";
 
 const Deployment = () => {
@@ -163,14 +162,7 @@ spec:
                         Deployments are essential for managing stateless applications. They offer zero-downtime updates, self-healing, rollbacks, and easy scaling in Kubernetes.
                     </p>
                 </section>
-
-                {/* Navigation */}
-                <PageNavigation
-                    leftPath="/clusters"
-                    leftLabel="Pods"
-                    rightPath="/clusters/rs-vs-sts"
-                    rightLabel="ReplicaSet vs StatefulSet"
-                />
+              
             </div>
         </div>
     );

@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { PageNavigation } from '../../components';
 
 export default function KubernetesArchitecture() {
     return (
@@ -105,12 +104,7 @@ etcd  Scheduler  Controller  Cloud Controller
                     </div>
                 </motion.div>
 
-                <PageNavigation
-                    leftPath="/basics/monolith-vs-microservice"
-                    leftLabel="Monolith vs Microservices"
-                    rightPath="/basics/introduction-to-kind-cluster-and-setup"
-                    rightLabel="KIND Cluster & Installation"
-                />
+                
             </div>
         </main>
     );

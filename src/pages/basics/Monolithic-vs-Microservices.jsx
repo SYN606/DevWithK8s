@@ -1,7 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
-import { PageNavigation } from '../../components';
+
 
 const MonolithicVsMicroservices = () => {
     return (
@@ -89,12 +87,7 @@ const MonolithicVsMicroservices = () => {
                     </ul>
                 </motion.div>
 
-                <PageNavigation
-                    leftPath="/basics/intro"
-                    leftLabel="Introduction to Kubernetes"
-                    rightPath="/basics/architecture-of-k8s"
-                    rightLabel="Kubernetes Architecture"
-                />
+              
             </div>
         </div>
     );

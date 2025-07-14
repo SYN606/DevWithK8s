@@ -23,4 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
+*.lock
+*.lockb
+
 package-lock.json

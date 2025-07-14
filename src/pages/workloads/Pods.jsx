@@ -8,7 +8,6 @@ import {
     FaNetworkWired,
     FaClock
 } from "react-icons/fa";
-import { PageNavigation } from "../../components";
 
 const PodsPage = () => {
     return (
@@ -98,13 +97,7 @@ spec:
                     </p>
                 </Section>
 
-                <PageNavigation
-                    leftPath="/clusters/namespaces"
-                    leftLabel="Namespaces"
-                    rightPath="/workloads/deployment"
-                    rightLabel="Deployments"
-                />
-            </div>
+                    </div>
         </div>
     );
 };

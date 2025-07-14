@@ -9,7 +9,7 @@ import {
     FiSettings,
 } from "react-icons/fi";
 import { motion } from "framer-motion";
-import { PageNavigation } from "../../components";
+
 
 const KindClusterInstallation = () => {
     return (
@@ -104,12 +104,7 @@ echo "kind & kubectl installation complete."`}</pre>
                     </ul>
                 </Section>
 
-                <PageNavigation
-                    leftPath="/basics/architecture-of-k8s"
-                    leftLabel="Architecture of Kubernetes"
-                    rightPath="/clusters/kind-cluster-config"
-                    rightLabel="Kind Cluster Creation"
-                />
+             
             </div>
         </main>
     );

@@ -78,6 +78,8 @@ export default function RoutingTable() {
 
     // Hide on homepage
     if (pathname === "/") return null;
+    else if (pathname === "/idea") return null;
+    else if (pathname === '/support') return null;
 
     return (
         <div className="bg-gray-900 rounded-xl border border-gray-800 p-5 shadow-lg text-sm max-h-[85vh] overflow-y-auto">

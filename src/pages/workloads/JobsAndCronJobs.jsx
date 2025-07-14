@@ -1,12 +1,5 @@
-import React from "react";
 import {
-    FiClock,
     FiSettings,
-    FiRepeat,
-    FiAlertCircle,
-    FiCalendar,
-    FiCheckCircle,
-    FiXCircle,
     FiTerminal,
     FiBarChart2,
 } from "react-icons/fi";
