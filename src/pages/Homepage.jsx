@@ -1,88 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { TbBook2, TbSearch } from "react-icons/tb";
 import { motion } from "framer-motion";
-
-const categories = [
-    {
-        title: "Basics",
-        links: [
-            { name: "Intro to Kubernetes", path: "/basics/intro" },
-            { name: "Monolith vs Microservices", path: "/basics/monolith-vs-microservice" },
-            { name: "Architecture & Kubectl", path: "/basics/architecture-of-k8s" },
-            { name: "KIND Cluster & Installation", path: "/basics/introduction-to-kind-cluster-and-setup" },
-        ],
-    },
-    {
-        title: "Clusters",
-        links: [
-            { name: "KIND Cluster Creation", path: "/clusters/kind-cluster-config" },
-            { name: "Minikube", path: "/clusters/minikube-clusters" },
-            { name: "Namespaces", path: "/clusters/namespaces" },
-        ],
-    },
-    {
-        title: "Workloads",
-        links: [
-            { name: "Pods", path: "/workloads/pods" },
-            { name: "Deployments", path: "/workloads/deployment" },
-            { name: "ReplicaSet vs StatefulSet", path: "/workloads/rs-vs-sts" },
-            { name: "Rolling Updates", path: "/workloads/rolling-updates" },
-            { name: "DaemonSets", path: "/workloads/daemonsets" },
-            { name: "Jobs & CronJobs", path: "/workloads/job&cron-jobs" },
-        ],
-    },
-    {
-        title: "Storage",
-        links: [
-            { name: "Storage Overview", path: "/storage/storage-overview" },
-            { name: "Persistent Volumes (PV)", path: "/storage/persistent-volume" },
-            { name: "StorageClasses", path: "/storage/" },
-            { name: "Persistent Volume Claims (PVC)", path: "/storage/persistent-volume-claim" },
-        ],
-    },
-    {
-        title: "Networking",
-        links: [
-            { name: "Services", path: "/networking/services" },
-            { name: "Ingress", path: "/networking/ingress" },
-        ],
-    },
-    {
-        title: "Configuration",
-        links: [
-            { name: "Annotations", path: "configuration/annotations" },
-            { name: "ConfigMaps", path: "configuration/config-maps" },
-            { name: "Secrets", path: "configuration/secrets" },
-        ],
-    },
-    {
-        title: "Scaling & Scheduling",
-        links: [
-            { name: "Probes", path: "scaling-and-scheduling/probes" },
-            { name: "Taints & Tolerations", path: "scaling-and-scheduling/taints-and-tolerations" },
-            { name: "HPA", path: "scaling-and-scheduling/HPA" },
-            { name: "VPA", path: "scaling-and-scheduling/VPA" },
-            { name: "Node Affinity", path: "scaling-and-scheduling/node-affinity" },
-        ],
-    },
-    {
-        title: "Access & Observability",
-        links: [
-            { name: "RBAC", path: "access-and-observability/rbac" },
-            { name: "Monitoring & Logging", path: "access-and-observability/monitoring-and-logging" },
-        ],
-    },
-    {
-        title: "Advanced Topics",
-        links: [
-            { name: "CRDs", path: "/crd" },
-            { name: "Helm, API, Operators", path: "/helm" },
-            { name: "Sidecar & Init Containers", path: "/sidecar" },
-            { name: "Istio Service Mesh", path: "/istio" },
-        ],
-    },
-]
+import { TbRocket, TbSearch } from "react-icons/tb";
+import { categories } from "../components";
 
 export default function Homepage() {
     const [search, setSearch] = useState("");
@@ -95,57 +15,67 @@ export default function Homepage() {
     }));
 
     return (
-        <div className="bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white min-h-screen px-4 py-10 font-sans">
-            <div className="max-w-5xl mx-auto">
-                {/* Header */}
-                <motion.h1
-                    className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
-                    initial={{ opacity: 0, y: -20 }}
+        <div className="relative bg-gray-950 text-white min-h-screen">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                {/* Hero Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7 }}
+                    className="text-center mb-14"
                 >
-                    🚀 Kubernetes with Kind
-                </motion.h1>
-                <p className="text-center text-lg text-gray-300 mb-8">
-                    Learn Kubernetes faster with curated notes, Kind clusters, and practical <span className="text-green-400 font-semibold">kubectl</span> commands.
-                </p>
-
-                {/* Search Bar */}
-                <div className="relative max-w-md mx-auto mb-10">
-                    <input
-                        type="text"
-                        placeholder="🔍 Search topics..."
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        className="w-full px-4 py-3 rounded-full bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    <TbSearch className="absolute right-4 top-3.5 text-gray-400" size={20} />
-                </div>
-
-                {/* Cheat Sheet Highlight */}
-                <div className="mb-12 grid md:grid-cols-2 gap-6">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent drop-shadow">
+                        🚀 DevWithK8s: Master Kubernetes
+                    </h1>
+                    <p className="mt-5 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                        Learn Kubernetes faster with curated notes, <span className="text-green-400 font-semibold">Kind clusters</span>, and practical{" "}
+                        <span className="text-green-400 font-semibold">kubectl</span> commands.
+                    </p>
                     <Link
                         to="/cheat-sheet"
-                        className="bg-blue-700 hover:bg-blue-800 p-6 rounded-2xl shadow-lg transition duration-300 transform hover:-translate-y-1"
+                        className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-gradient-to-r from-green-400 to-emerald-500 text-black font-bold rounded-full shadow hover:shadow-lg hover:scale-105 transition transform duration-300"
                     >
-                        <h2 className="text-xl font-bold mb-2">📄 Kind + Kubectl Commands</h2>
-                        <p className="text-gray-200 text-sm">
-                            Quick reference for essential CLI commands to manage clusters.
-                        </p>
+                        <TbRocket size={20} /> Get Started
                     </Link>
-                </div>
+                </motion.div>
+
+                {/* Search Bar */}
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                    className="relative max-w-lg mx-auto mb-12"
+                >
+                    <input
+                        type="text"
+                        placeholder="🔍 Search Kubernetes topics..."
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        className="w-full px-5 py-3 rounded-full bg-gray-800/80 backdrop-blur-sm text-white placeholder-gray-400 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition"
+                    />
+                    <TbSearch className="absolute right-4 top-3.5 text-gray-400" size={22} />
+                </motion.div>
 
                 {/* Categories Grid */}
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.6 }}
+                    className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
                     {filteredCategories.map(
                         (category) =>
                             category.links.length > 0 && (
                                 <motion.div
                                     key={category.title}
-                                    whileHover={{ scale: 1.03 }}
-                                    className="bg-gray-800 rounded-xl p-5 shadow-lg"
+                                    whileHover={{
+                                        scale: 1.03,
+                                        boxShadow: "0px 12px 30px rgba(14, 165, 233, 0.2)",
+                                    }}
+                                    className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-6 shadow-inner border border-gray-700/50 hover:border-green-400 transition-all duration-300"
                                 >
-                                    <h3 className="text-lg font-semibold text-blue-300 mb-3">
-                                        {category.title}
+                                    <h3 className="text-lg font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                                        <category.icon size={20} /> {category.title}
                                     </h3>
                                     <ul className="space-y-2">
                                         {category.links.map((link) => (
@@ -162,7 +92,7 @@ export default function Homepage() {
                                 </motion.div>
                             )
                     )}
-                </div>
+                </motion.div>
             </div>
         </div>
     );
