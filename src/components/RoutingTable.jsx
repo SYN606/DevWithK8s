@@ -70,11 +70,20 @@ const routes = [
             { name: "Node Affinity", path: "/scaling-and-scheduling/node-affinity" },
         ],
     },
-     {
+    {
         section: "Access & Observability",
         items: [
             { name: "RBAC", path: "/access-and-observability/rbac" },
             { name: "Monitoring and Logging", path: "/access-and-observability/monitoring-and-logging" },
+        ],
+    },
+    {
+        section: "Advance Topics",
+        items: [
+            { name: "CRDs", path: "/advance-topics/CRDs" },
+            { name: "Helm API and Operators", path: "/advance-topics/helm-api-and-operators" },
+            { name: "SideCar and Init Containers", path: "/advance-topics/sidecar-and-init-container" },
+            { name: "Service Mesh", path: "/advance-topics/service-mesh" },
         ],
     },
 ];

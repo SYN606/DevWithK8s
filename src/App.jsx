@@ -1,18 +1,19 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Base, ScrollToTop } from "./components";
 import {
-  Annotations, CheatSheet, ConfigMaps, DaemonSets, Deployment, Homepage,
+  Annotations, CheatSheet, ConfigMaps, DaemonSets, Deployment, HelmVsOperator, Homepage,
   HPA,
   IdeaPage,
   IngressPage, JobsAndCronJobs, KindClusterConfig, KindClusterInstallation,
-  KubernetesArchitecture, KubernetesIntro, MinikubeCluster,
+  KubernetesArchitecture, KubernetesCRD, KubernetesIntro, MinikubeCluster,
   MonitoringLogging,
   MonolithicVsMicroservices, NamespacesPage, NodeAffinity, NotFoundPage,
   PersistentVolume, PersistentVolumeClaim, PodsPage,
   Probes,
   RBAC,
   ReplicaSetVsStatefulSetPage, RollingUpdatesPage, Secrets,
-  ServicesPage, StorageClass, StorageOverview,
+  ServiceMesh,
+  ServicesPage, SidecarVsInitContainers, StorageClass, StorageOverview,
   TaintsTolerations,
   VPA
 } from "./pages";
@@ -69,6 +70,12 @@ const scalingAndSchedulingRoutes = [
 const accessRouting = [
   { path: 'rbac', element: <RBAC /> },
   { path: 'monitoring-and-logging', element: <MonitoringLogging /> }
+]
+const advanceTopicsRouting = [
+  { path: 'CRDs', element: <KubernetesCRD /> },
+  { path: 'helm-api-and-operators', element: <HelmVsOperator /> },
+  { path: 'sidecar-and-init-container', element: <SidecarVsInitContainers /> },
+  { path: 'service-mesh', element: <ServiceMesh /> }
 ]
 
 export default function App() {
@@ -135,6 +142,13 @@ export default function App() {
             <Route path="access-and-observability">
               <Route index element={<Navigate to="rbac" replace />} />
               {accessRouting.map(({ path, element }) => (
+                <Route key={path} path={path} element={element} />
+              ))}
+            </Route>
+
+            <Route path="advance-topics">
+              <Route index element={<Navigate to="CRDs" replace />} />
+              {advanceTopicsRouting.map(({ path, element }) => (
                 <Route key={path} path={path} element={element} />
               ))}
             </Route>

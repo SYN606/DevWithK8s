@@ -47,6 +47,12 @@ import TaintsTolerations from "./sc-and-sch/TaintsAndTolerants";
 import RBAC from "./access/Rbac";
 import MonitoringLogging from "./access/MonitoringLogging";
 
+// advance
+import KubernetesCRD from "./advance/CRDs";
+import HelmVsOperator from "./advance/HelmAndOp";
+import SidecarVsInitContainers from "./advance/SidecarAndInitCont";
+import ServiceMesh from "./advance/ServcieMesh";
+
 // error page
 import NotFoundPage from "./ErrorPage";
 
@@ -68,6 +74,8 @@ export {
     HPA, VPA, NodeAffinity, Probes, TaintsTolerations,
     // access
     RBAC, MonitoringLogging,
+    // advance
+    KubernetesCRD, HelmVsOperator, SidecarVsInitContainers, ServiceMesh,
     // notfound
     NotFoundPage
 

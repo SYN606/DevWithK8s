@@ -83,10 +83,10 @@ const categories = [
         title: "Advanced Topics",
         icon: FaRocket,
         links: [
-            { name: "CRDs", path: "/crd" },
-            { name: "Helm, API, Operators", path: "/helm" },
-            { name: "Sidecar & Init Containers", path: "/sidecar" },
-            { name: "Istio Service Mesh", path: "/istio" },
+            { name: "CRDs", path: "advance-topics/CRDs" },
+            { name: "Helm, API, Operators", path: "advance-topics/helm-api-and-operators" },
+            { name: "Sidecar & Init Containers", path: "advance-topics/sidecar-and-init-container" },
+            { name: "Service Mesh", path: "advance-topics/service-mesh" },
         ],
     },
 ];
