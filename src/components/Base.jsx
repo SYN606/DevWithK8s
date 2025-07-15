@@ -12,7 +12,7 @@ export default function Base() {
             <Navbar />
 
             <main className="bg-gray-950 text-gray-200 min-h-screen">
-                <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-[250px_1fr_220px] gap-6">
+                <div className="max-w- mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-[250px_1fr_220px] gap-6">
                     {/* Sticky left routing table */}
                     <aside className="hidden lg:block sticky top-6 self-start h-fit">
                         <RoutingTable />

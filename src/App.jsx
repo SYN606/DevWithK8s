@@ -6,9 +6,11 @@ import {
   IdeaPage,
   IngressPage, JobsAndCronJobs, KindClusterConfig, KindClusterInstallation,
   KubernetesArchitecture, KubernetesIntro, MinikubeCluster,
+  MonitoringLogging,
   MonolithicVsMicroservices, NamespacesPage, NodeAffinity, NotFoundPage,
   PersistentVolume, PersistentVolumeClaim, PodsPage,
   Probes,
+  RBAC,
   ReplicaSetVsStatefulSetPage, RollingUpdatesPage, Secrets,
   ServicesPage, StorageClass, StorageOverview,
   TaintsTolerations,
@@ -62,6 +64,11 @@ const scalingAndSchedulingRoutes = [
   { path: "HPA", element: <HPA /> },
   { path: "VPA", element: <VPA /> },
   { path: "node-affinity", element: <NodeAffinity /> },
+]
+
+const accessRouting = [
+  { path: 'rbac', element: <RBAC /> },
+  { path: 'monitoring-and-logging', element: <MonitoringLogging /> }
 ]
 
 export default function App() {
@@ -121,6 +128,13 @@ export default function App() {
             <Route path="scaling-and-scheduling">
               <Route index element={<Navigate to="probes" replace />} />
               {scalingAndSchedulingRoutes.map(({ path, element }) => (
+                <Route key={path} path={path} element={element} />
+              ))}
+            </Route>
+
+            <Route path="access-and-observability">
+              <Route index element={<Navigate to="rbac" replace />} />
+              {accessRouting.map(({ path, element }) => (
                 <Route key={path} path={path} element={element} />
               ))}
             </Route>

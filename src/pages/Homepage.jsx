@@ -69,8 +69,8 @@ const categories = [
     {
         title: "Access & Observability",
         links: [
-            { name: "RBAC", path: "/rbac" },
-            { name: "Monitoring & Logging", path: "/monitoring" },
+            { name: "RBAC", path: "access-and-observability/rbac" },
+            { name: "Monitoring & Logging", path: "access-and-observability/monitoring-and-logging" },
         ],
     },
     {

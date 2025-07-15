@@ -43,6 +43,10 @@ import NodeAffinity from "./sc-and-sch/NodeAffinity";
 import Probes from "./sc-and-sch/Probes";
 import TaintsTolerations from "./sc-and-sch/TaintsAndTolerants";
 
+// access
+import RBAC from "./access/Rbac";
+import MonitoringLogging from "./access/MonitoringLogging";
+
 // error page
 import NotFoundPage from "./ErrorPage";
 
@@ -62,6 +66,8 @@ export {
     Secrets, Annotations, ConfigMaps,
     // sc and sch
     HPA, VPA, NodeAffinity, Probes, TaintsTolerations,
+    // access
+    RBAC, MonitoringLogging,
     // notfound
     NotFoundPage
 

@@ -60,7 +60,6 @@ const routes = [
             { name: "Secrets", path: "/configuration/secrets" },
         ],
     },
-
     {
         section: "Scaling & Scheduling",
         items: [
@@ -69,6 +68,13 @@ const routes = [
             { name: "HPA", path: "/scaling-and-scheduling/HPA" },
             { name: "VPA", path: "/scaling-and-scheduling/VPA" },
             { name: "Node Affinity", path: "/scaling-and-scheduling/node-affinity" },
+        ],
+    },
+     {
+        section: "Access & Observability",
+        items: [
+            { name: "RBAC", path: "/access-and-observability/rbac" },
+            { name: "Monitoring and Logging", path: "/access-and-observability/monitoring-and-logging" },
         ],
     },
 ];
