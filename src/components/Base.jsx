@@ -12,9 +12,9 @@ export default function Base() {
         <>
             <Navbar />
 
-            <main className="bg-gray-950 text-gray-200 min-h-screen">
+            <main className="bg-gray-950 text-gray-200">
                 <div
-                    className={`max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 grid gap-8 relative ${hideLeftSidebar
+                    className={`max-w-[1440px] mx-auto p-5 sm:px-6 lg:px-8 grid gap-8 relative ${hideLeftSidebar
                             ? "grid-cols-1 lg:grid-cols-[1fr_240px]" 
                             : "grid-cols-1 lg:grid-cols-[260px_1fr_200px]" 
                         }`}
