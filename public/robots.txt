@@ -1,0 +1,6 @@
+# Allow all bots to crawl the entire site
+User-agent: *
+Allow: /
+
+# Specify sitemap location (optional but recommended if you have one)
+Sitemap: https://dev-with-k8s.vercel.app/sitemap.xml

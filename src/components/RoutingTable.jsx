@@ -64,7 +64,7 @@ const routes = [
         section: "Scaling & Scheduling",
         items: [
             { name: "Probes", path: "/scaling-and-scheduling/probes" },
-            { name: "Taints and Tolrations", path: "/scaling-and-scheduling/taints-and-tolrations" },
+            { name: "Taints and Tolrations", path: "/scaling-and-scheduling/taints-and-tolerations" },
             { name: "HPA", path: "/scaling-and-scheduling/HPA" },
             { name: "VPA", path: "/scaling-and-scheduling/VPA" },
             { name: "Node Affinity", path: "/scaling-and-scheduling/node-affinity" },

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Home -->
+    <url>
+        <loc>https://devwithk8s.vercel.app/</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/cheat-sheet</loc>
+    </url>
+
+    <!-- Basics -->
+    <url>
+        <loc>https://devwithk8s.vercel.app/basics/intro</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/basics/monolith-vs-microservice</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/basics/architecture-of-k8s</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/basics/introduction-to-kind-cluster-and-setup</loc>
+    </url>
+
+    <!-- Clusters -->
+    <url>
+        <loc>https://devwithk8s.vercel.app/clusters/minikube-clusters</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/clusters/kind-cluster-config</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/clusters/namespaces</loc>
+    </url>
+
+    <!-- Workloads -->
+    <url>
+        <loc>https://devwithk8s.vercel.app/workloads/pods</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/workloads/deployment</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/workloads/rs-vs-sts</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/workloads/rolling-updates</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/workloads/daemonsets</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/workloads/job&amp;cron-jobs</loc>
+    </url>
+
+    <!-- Storage -->
+    <url>
+        <loc>https://devwithk8s.vercel.app/storage/storage-overview</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/storage/persistent-volume</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/storage/storage-classes</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/storage/persistent-volume-claim</loc>
+    </url>
+
+    <!-- Networking -->
+    <url>
+        <loc>https://devwithk8s.vercel.app/networking/services</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/networking/ingress</loc>
+    </url>
+
+    <!-- Configuration -->
+    <url>
+        <loc>https://devwithk8s.vercel.app/configuration/annotations</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/configuration/config-maps</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/configuration/secrets</loc>
+    </url>
+
+    <!-- Scaling & Scheduling -->
+    <url>
+        <loc>https://devwithk8s.vercel.app/scaling-and-scheduling/probes</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/scaling-and-scheduling/taints-and-tolerations</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/scaling-and-scheduling/HPA</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/scaling-and-scheduling/VPA</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/scaling-and-scheduling/node-affinity</loc>
+    </url>
+
+    <!-- Access & Observability -->
+    <url>
+        <loc>https://devwithk8s.vercel.app/access-and-observability/rbac</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/access-and-observability/monitoring-and-logging</loc>
+    </url>
+
+    <!-- Advance Topics -->
+    <url>
+        <loc>https://devwithk8s.vercel.app/advance-topics/CRDs</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/advance-topics/helm-api-and-operators</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/advance-topics/sidecar-and-init-container</loc>
+    </url>
+    <url>
+        <loc>https://devwithk8s.vercel.app/advance-topics/service-mesh</loc>
+    </url>
+
+</urlset>
